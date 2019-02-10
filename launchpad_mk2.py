@@ -49,6 +49,15 @@ def main():
 	print( "\nRunning..." )
 	print( " - Python " + str( sys.version.split()[0] ) )
 
+	ledCodes = [[5,5,5,5,5,5,5,5,5],
+				[11,11,0,0,11,11,0,0,50],
+				[11,11,0,0,11,11,0,0,50],
+				[0,0,11,11,0,0,11,11,50],
+				[0,0,11,11,0,0,11,11,50],
+				[11,11,0,0,11,11,0,0,50],
+				[11,11,0,0,11,11,0,0,50],
+				[0,0,11,11,0,0,11,11,50],
+				[0,0,11,11,0,0,11,11,50]]
 
 	# create an instance
 	lp = launchpad.LaunchpadMk2()
@@ -62,7 +71,10 @@ def main():
 
 	# Clear the buffer because the Launchpad remembers everything
 	lp.ButtonFlush()
-	lp.LedAllOn( 9 )
+	
+	for i in range(9):
+		for j in range(9):
+			lp.LedCtrlXYByCode(i, j, ledCodes[j][i])
 
 	# buttonThread = Thread(target = process_buttons, args = (lp, ))
 	# buttonThread.start()

@@ -82,7 +82,7 @@ def main():
 	application = tornado.web.Application([(r'/', WSHandler,{"lp": lp})],)
 
 	http_server = tornado.httpserver.HTTPServer(application)
-	http_server.listen(9001)
+	http_server.listen(5802)
 	tornado.ioloop.IOLoop.instance().start()
 
 	# close this instance

@@ -63,10 +63,10 @@ def main():
 	lp = launchpad.LaunchpadMk2()
 
 	# open the first Launchpad Mk2
-	if lp.Open( 0, "mk2" ):
-		print( " - Launchpad Mk2: OK" )
+	if lp.Open( 0, "x" ):
+		print( " - Launchpad X: OK" )
 	else:
-		print( " - Launchpad Mk2: ERROR" )
+		print( " - Launchpad X: ERROR" )
 		return
 
 	# Clear the buffer because the Launchpad remembers everything
